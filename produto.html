@@ -1,68 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Detalhes do Produto - Lorem Moda</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <header>
-    <h1>Lorem Moda</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="carrinho.html">Carrinho</a>
-    </nav>
-  </header>
-
-  <div id="detalhes-produto" style="padding: 40px;"></div>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = parseInt(params.get('id'));
-
-    const produto = {
-      1: {
-        nome: "Camisa Social",
-        preco: 79.9,
-        imagem:
-          "https://images.unsplash.com/photo-1602810313321-16bbba4c5f5b?auto=format&fit=crop&w=500&q=80",
-      },
-      2: {
-        nome: "Vestido Floral",
-        preco: 119.0,
-        imagem:
-          "https://images.unsplash.com/photo-1556909212-6c9fbbc0f4c1?auto=format&fit=crop&w=500&q=80",
-      },
-      3: {
-        nome: "Jaqueta Jeans",
-        preco: 149.9,
-        imagem:
-          "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=500&q=80",
-      },
-      4: {
-        nome: "Calça Jeans",
-        preco: 99.9,
-        imagem:
-          "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&w=500&q=80",
-      },
-    }[id];
-
-    document.getElementById("detalhes-produto").innerHTML = `
-      <h2>${produto.nome}</h2>
-      <img src="${produto.imagem}" style="width:300px;border-radius:8px;" />
-      <p style="font-size:18px;color:#d32f2f;">R$ ${produto.preco.toFixed(2)}</p>
-      <button onclick="adicionarAoCarrinho(${id})">Adicionar ao carrinho</button>
-    `;
-
-    function adicionarAoCarrinho(id) {
-      const produtoAdd = produto;
-      let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-      carrinho.push(produtoAdd);
-      localStorage.setItem("carrinho", JSON.stringify(carrinho));
-      alert("Produto adicionado!");
-    }
-  </script>
-</body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mensagem de Boa Tarde novo remanso</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <img
+        src="https://gifman.net/wp-content/uploads/2019/06/ursinho-fofo-apaixonado.gif"
+        alt="Boa tarde"
+      />
+      <p class="message">
+        Boa tarde! 🌅<br />
+        Espero que o seu dia esteja sendo leve, assim como a paz que você
+        transmite.
+        <br /><br />
+        <span class="highlight">Você é especial mesmo sem perceber.</span>
+      </p>
+    </div>
+  </body>
 </html>
