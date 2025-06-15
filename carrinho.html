@@ -1,58 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Carrinho - Lorem Moda</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <header>
-    <h1>Seu Carrinho - Lorem Moda</h1>
-    <nav>
-      <a href="index.html">Voltar à loja</a>
-    </nav>
-  </header>
-
-  <div style="padding:40px;">
-    <ul id="lista-carrinho"></ul>
-    <p id="total"></p>
-    <button onclick="limparCarrinho()">Limpar carrinho</button>
-  </div>
-
-  <script>
-    const lista = document.getElementById("lista-carrinho");
-    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    let total = 0;
-
-    function atualizarLista() {
-      lista.innerHTML = "";
-      total = 0;
-      carrinho.forEach((item, index) => {
-        total += item.preco;
-        const li = document.createElement("li");
-        li.innerHTML = `${item.nome} - R$ ${item.preco.toFixed(
-          2
-        )} <button onclick="remover(${index})">Remover</button>`;
-        lista.appendChild(li);
-      });
-      document.getElementById("total").innerText = "Total: R$ " + total.toFixed(2);
-    }
-
-    function remover(i) {
-      carrinho.splice(i, 1);
-      localStorage.setItem("carrinho", JSON.stringify(carrinho));
-      atualizarLista();
-    }
-
-    function limparCarrinho() {
-      carrinho = [];
-      localStorage.removeItem("carrinho");
-      atualizarLista();
-    }
-
-    atualizarLista();
-  </script>
-</body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mensagem de Boa Tarde novo remanso</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <img
+        src="https://gifman.net/wp-content/uploads/2019/06/ursinho-fofo-apaixonado.gif"
+        alt="Boa tarde"
+      />
+      <p class="message">
+        Boa tarde! 🌅<br />
+        Espero que o seu dia esteja sendo leve, assim como a paz que você
+        transmite.
+        <br /><br />
+        <span class="highlight">Você é especial mesmo sem perceber.</span>
+      </p>
+    </div>
+  </body>
 </html>
+
